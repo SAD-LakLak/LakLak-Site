@@ -1,4 +1,4 @@
-version: '3.9'
+---
 
 services:
   backend:
@@ -8,14 +8,10 @@ services:
     container_name: laklak_backend_container
     ports:
       - "8000:8000"
-    depends_on:
-      - frontend
     volumes:
       - data:/app/data:rw
     networks:
       - laklak_network
-    env_file:
-      - ./backend/.env
 
   frontend:
     build:
@@ -27,8 +23,7 @@ services:
       - laklak_network
     depends_on:
       - backend
-    env_file:
-      - ./frontend/.env
+
 
 
 networks:

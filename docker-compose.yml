@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend/LakLak-Site
+      dockerfile: Dockerfile
+    container_name: laklak_backend_container
+    ports:
+      - "8000:8000"
+    depends_on:
+      - frontend
+    volumes:
+      - data:/app/data:rw
+    networks:
+      - laklak_network
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: laklak_frontend_container
+    ports:
+      - "3000:3000"
+    networks:
+      - laklak_network
+    depends_on:
+      - backend
+    env_file:
+      - ./frontend/.env
+
+
+networks:
+  laklak_network:
+
+volumes:
+  data:

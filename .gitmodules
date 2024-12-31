@@ -1,0 +1,6 @@
+[submodule "Frontend"]
+	path = Frontend
+	url = https://github.com/SAD-LakLak/Frontend
+[submodule "Backend"]
+	path = Backend
+	url = https://github.com/SAD-LakLak/Backend/

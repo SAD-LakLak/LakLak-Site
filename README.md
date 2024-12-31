@@ -8,3 +8,11 @@
 5. go back to root folder
 6. git submodule update --init --recursive
 ```
+for run the project:
+```
+docker compose up -d
+```
+for stop the project:
+```
+docker compose stop
+```
